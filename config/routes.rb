@@ -9,4 +9,13 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#index"
+  get "about_us", to: "pages#about_us"
+  get "contact_us", to: "pages#contact_us"
+
+   # Admins manage projects
+   namespace :admin do
+    resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
+  end
+
+  resources :projects, only: [:index, :show]
 end
