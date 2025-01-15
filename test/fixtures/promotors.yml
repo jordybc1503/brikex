@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  contact_person: MyString
+  email: MyString
+  phone: MyString
+  website: MyString
+  company_type: MyString
+  headquarters: MyString
+  years_in_business: 1
+  registered_address: MyString
+  tax_id: MyString
+  registration_number: MyString
+  average_return_rate: 9.99
+  total_raised_funds: 9.99
+  number_of_investors: 1
+
+two:
+  name: MyString
+  contact_person: MyString
+  email: MyString
+  phone: MyString
+  website: MyString
+  company_type: MyString
+  headquarters: MyString
+  years_in_business: 1
+  registered_address: MyString
+  tax_id: MyString
+  registration_number: MyString
+  average_return_rate: 9.99
+  total_raised_funds: 9.99
+  number_of_investors: 1

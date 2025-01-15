@@ -8,7 +8,7 @@ module.exports = {
     './app/helpers/**/*.rb',
     './app/javascript/**/*.js',
     './app/views/**/*.{erb,haml,html,slim}',
-    './node_modules/flowbite/**/*.js', // Añadir esto
+    // './node_modules/flowbite/**/*.js', // Añadir esto
   ],
   theme: {
     extend: {

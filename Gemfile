@@ -61,6 +61,7 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "error_highlight", "~> 0.7.0", platforms: [:ruby]
 end
 
 group :test do
@@ -70,3 +71,4 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
+gem "simple_form", github: "heartcombo/simple_form"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_01_12_201851) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_15_210526) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,42 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_12_201851) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "fees", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "fee_type"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_fees_on_project_id"
+  end
+
+  create_table "guarantees", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.string "description"
+    t.string "guarantee_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_guarantees_on_project_id"
+  end
+
+  create_table "investments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.decimal "amount"
+    t.datetime "investment_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_investments_on_project_id"
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "project_types", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -33,7 +69,35 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_12_201851) do
     t.bigint "admin_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "promotor_id", null: false
+    t.string "location"
+    t.decimal "target_amount"
+    t.decimal "raised_amount"
+    t.decimal "return_rate"
+    t.integer "duration"
+    t.bigint "project_type_id", null: false
     t.index ["admin_id"], name: "index_projects_on_admin_id"
+    t.index ["project_type_id"], name: "index_projects_on_project_type_id"
+    t.index ["promotor_id"], name: "index_projects_on_promotor_id"
+  end
+
+  create_table "promotors", force: :cascade do |t|
+    t.string "name"
+    t.string "contact_person"
+    t.string "email"
+    t.string "phone"
+    t.string "website"
+    t.string "company_type"
+    t.string "headquarters"
+    t.integer "years_in_business"
+    t.string "registered_address"
+    t.string "tax_id"
+    t.string "registration_number"
+    t.decimal "average_return_rate"
+    t.decimal "total_raised_funds"
+    t.integer "number_of_investors"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +112,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_01_12_201851) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "fees", "projects"
+  add_foreign_key "guarantees", "projects"
+  add_foreign_key "investments", "projects"
+  add_foreign_key "investments", "users"
   add_foreign_key "projects", "admins"
+  add_foreign_key "projects", "project_types"
+  add_foreign_key "projects", "promotors"
 end
