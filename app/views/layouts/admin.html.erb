@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <main class=" mx-auto px-0 flex">
+      <div>
+        <nav class="flex w-full">
+          <div class="w-64 p-4 h-screen bg-gray-600 sticky top-0">
+            <div class="flex">
+              <%= image_tag "logo_1.svg", class: "w-1/2 mb-2.5", alt: "Logo Brikex" %>
+
+            </div>
+            <ul class="flex flex-col text-gray-50">
+              <li>
+                <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'gauge-high', class: "mr-2") %><span class="hidden md:inline-block">DashBoard</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'list', class: "mr-2") %><span class="hidden md:inline-block">Categories</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_projects_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'building', class: "mr-2") %><span class="hidden md:inline-block">Projects</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_promotors_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'handshake', class: "mr-2") %><span class="hidden md:inline-block">Promotores</span>
+                <% end %>
+              </li>
+
+            </ul>
+          </div>
+        </nav>
+
+      </div>
+      <div>
+        <%= yield %>
+      </div>
+    </main>
+
+  </body>
+</html>
