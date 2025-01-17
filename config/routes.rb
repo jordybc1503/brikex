@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # Admins manage projects
     root to: "admin#index", as: :admin_root
     namespace :admin do
-      resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
+      resources :project_types
       resources :promotors
       resources :pages
     end
