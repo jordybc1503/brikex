@@ -72,3 +72,4 @@ end
 
 gem "devise", "~> 4.9"
 gem "simple_form", github: "heartcombo/simple_form"
+gem "font-awesome-sass", "~> 6.1"

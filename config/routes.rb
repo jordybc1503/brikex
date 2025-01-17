@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :admins
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -7,10 +8,14 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-   # Admins manage projects
-  namespace :admin do
-    resources :projects, only: [:index, :new, :create, :edit, :update, :destroy]
-    resources :pages
+  authenticated :admin do
+    # Admins manage projects
+    root to: "admin#index", as: :admin_root
+    namespace :admin do
+      resources :project_types
+      resources :promotors
+      resources :pages
+    end
   end
 
   # open routes
@@ -19,4 +24,6 @@ Rails.application.routes.draw do
   root "pages#index"
   get "about_us", to: "pages#about_us"
   get "contact_us", to: "pages#contact_us"
+
+  get "admin" => "admin#index"
 end
