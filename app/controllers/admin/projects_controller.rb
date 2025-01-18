@@ -13,7 +13,7 @@ class Admin::ProjectsController < AdminController
   # GET /admin/projects/new
   def new
     @admin_project = Project.new
-    
+
   end
 
   # GET /admin/projects/1/edit
@@ -43,7 +43,7 @@ class Admin::ProjectsController < AdminController
   def update
     respond_to do |format|
       if @admin_project.update(admin_project_params)
-        format.html { redirect_to @admin_project, notice: "Project was successfully updated." }
+        format.html { redirect_to [:admin, @admin_project], notice: "Project was successfully updated." }
         format.json { render :show, status: :ok, location: @admin_project }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -70,6 +70,6 @@ class Admin::ProjectsController < AdminController
 
     # Only allow a list of trusted parameters through.
     def admin_project_params
-      params.require(:project).permit(:name, :description, :status, :promotor_id, :location, :target_amount, :raised_amount, :return_rate, :duration, :project_type_id)
+      params.require(:project).permit(:name, :description, :status, :promotor_id, :location, :target_amount, :raised_amount, :return_rate, :duration, :project_type_id, images: [])
     end
 end
