@@ -118,6 +118,10 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dotenv (3.1.7)
+    dotenv-rails (3.1.7)
+      dotenv (= 3.1.7)
+      railties (>= 6.1)
     drb (2.2.1)
     error_highlight (0.7.0)
     erubi (1.13.1)
@@ -314,6 +318,7 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  dotenv-rails
   error_highlight (~> 0.7.0)
   faker
   font-awesome-sass (~> 6.1)
