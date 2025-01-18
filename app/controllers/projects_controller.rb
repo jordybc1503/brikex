@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @open_projects = Project.where(status: 'Abierto')
   end
 
   def new

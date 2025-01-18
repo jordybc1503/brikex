@@ -13,11 +13,18 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Helvetica', 'Inter var', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'custom-green': '#2CA982',
+        'green-primary': '#2CA982',      // Vibrant, primary green
+        'green-muted': '#2B6867',        // Darker, muted green with teal undertones
+        'teal-accent': '#18A7AA',        // Bright teal accent color
+        'gray-light': '#BFC3C6',         // Light neutral gray
+        'gray-dark': '#1A1917',          // Very dark gray, almost black
       },
+      backgroundImage: {
+        'banner-menu': "url('/assets/menu-banner.png')",
+      }
     },
   },
   plugins: [
