@@ -7,33 +7,27 @@
         Name
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Contact person
+        Description
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Email
-      </th>
-      <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Company type
+        Estado
       </th>
     </tr>
   </thead>
   <tbody>
-    <% admin_promotors.each do |p| %>
+    <% admin_projects.each do |p| %>
       <tr class="bg-gray-50 border-b">
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline">
 
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline">
-          <%= link_to p.name, edit_admin_promotor_path(p) %>
+          <%= link_to p.name, edit_admin_project_path(p) %>
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.contact_person %>
+          <%= p.description %>
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.email %>
-        </td>
-        <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.company_type %>
+          <%= p.status %>
         </td>
       </tr>
     <% end %>

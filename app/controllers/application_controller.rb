@@ -23,15 +23,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Redirect to a specific page after sign out
-  def after_sign_out_path_for(resource_or_scope)
-    if resource_or_scope == :admin
-      admin_project_path # Replace with your admin dashboard path
-    else
-      root_path # Replace with your admin dashboard path
-    end
-  end
-
   protected
 
   # Permit additional parameters for sign-up and account updates

@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  def index
-    @projects = Project.all
-  end
+  belongs_to :admin
+  belongs_to :promotor
+  belongs_to :project_type
 end

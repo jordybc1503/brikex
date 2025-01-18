@@ -4,36 +4,36 @@
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Name
+        Nombres y Apellidos
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Contact person
+        País
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
         Email
       </th>
       <th scope="col" class="text-sm font-medium text-gray-800 px-6 py-4 text-left">
-        Company type
+        Número de telefono
       </th>
     </tr>
   </thead>
   <tbody>
-    <% admin_promotors.each do |p| %>
+    <% admin_users.each do |u| %>
       <tr class="bg-gray-50 border-b">
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline">
 
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800 underline">
-          <%= link_to p.name, edit_admin_promotor_path(p) %>
+          <%= link_to u.full_name, edit_admin_user_path(u) %>
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.contact_person %>
+          <%= u.country_code %>
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.email %>
+          <%= u.email %>
         </td>
         <td class="px-6 py-4 whitepsace-nowrap tex-sm font-medium text-gray-800">
-          <%= p.company_type %>
+          <%= "#{u.phone_prefix} #{u.phone_number}" %>
         </td>
       </tr>
     <% end %>

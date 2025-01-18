@@ -1,0 +1,71 @@
+<%= form_with(model: [:admin, admin_project], class: "contents") do |form| %>
+  <% if admin_project.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(admin_project.errors.count, "error") %> prohibited this admin_project from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% admin_project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:name].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:description].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:description].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :status %>
+    <%= form.text_field :status, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:status].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:status].any?}] %>
+  </div>
+
+
+
+  <div class="my-5">
+    <%= form.label :promotor_id %>
+    <%= form.collection_select :promotor_id, Promotor.order(:name), :id, :name, prompt: "Seleccione un promotor",
+        class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:promotor_id].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:promotor_id].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :location %>
+    <%= form.text_field :location, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:location].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:location].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :target_amount %>
+    <%= form.text_field :target_amount, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:target_amount].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:target_amount].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :raised_amount %>
+    <%= form.text_field :raised_amount, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:raised_amount].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:raised_amount].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :return_rate %>
+    <%= form.text_field :return_rate, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:return_rate].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:return_rate].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :duration %>
+    <%= form.number_field :duration, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:duration].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:duration].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :project_type_id %>
+    <%= form.collection_select :project_type_id, ProjectType.order(:name), :id, :name,
+     class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_project.errors[:project_type_id].none?, "border-red-400 focus:outline-red-600": admin_project.errors[:project_type_id].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

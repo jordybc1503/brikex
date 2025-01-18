@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  status: MyString
+  admin: one
+  promotor: one
+  location: MyString
+  target_amount: 9.99
+  raised_amount: 9.99
+  return_rate: 9.99
+  duration: 1
+  project_type: one
+
+two:
+  name: MyString
+  description: MyText
+  status: MyString
+  admin: two
+  promotor: two
+  location: MyString
+  target_amount: 9.99
+  raised_amount: 9.99
+  return_rate: 9.99
+  duration: 1
+  project_type: two
