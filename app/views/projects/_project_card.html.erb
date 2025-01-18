@@ -6,8 +6,27 @@
     <p><%= project.location %></p>
   </div>
   <div>
-    <% if  %>
-      
-    <% end %>
+    <%=  image_tag "project_sample.png" %>
+  </div>
+  <div class="bg-green-primary">
+    <h3 class=><%= project.name %></h3>
+  </div>
+  <div>
+    <div>
+      <p>10% anual</p>
+      <p>Tasa de retorno</p>
+    </div>
+    <div>
+      <p>10% anual</p>
+      <p>Tasa de retorno</p>
+    </div>
+
+  </div>
+  <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+    <div class="bg-blue-600 h-2.5 rounded-full" style="width: 45%"></div>
+  </div>
+  <div>
+    <%= link_to "Conoce más", project_path(project), class: "text-green-primary"  %>
+    <%= link_to "Invierte" %>
   </div>
 </div>

@@ -1,0 +1,73 @@
+<section id=<%= "project #{@project.id}"%>>
+  <div>
+    <div>
+      <%= link_to "Oportunidades", projects_path %> / <%= @project.name %>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <h1><%= @project.name %></h1>
+        <% if @project.images.any? %>
+          <% @project.images.each_with_index do |image, index| %>
+            <%= image_tag image, class: "#{ index > 0 ? 'hidden' : ''  }" %>
+          <% end %>
+        <% else %>
+          <%= image_tag "project_sample", class: "w-80" %>
+        <% end %>
+
+        <h2 class="text-lg font-bold"><%= @project.name %></h2>
+        <div>
+          <%= image_tag "icons/Position.svg" %>
+          <p><%= @project.location %></p>
+        </div>
+        <p><%= @project.description %></p>
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Column 1 -->
+          <div>
+            <div>
+              <p>Instrumento</p>
+              <p>Tasa de retorno</p>
+            </div>
+            <div>
+              <p>Plazo</p>
+              <p>Tasa de retorno</p>
+            </div>
+            <div>
+              <p>Pago de intereses</p>
+              <p>Tasa de retorno</p>
+            </div>
+          </div>
+
+          <!-- Column 2 -->
+          <div>
+            <div>
+              <p>Instrumento</p>
+              <p>Tasa de retorno</p>
+            </div>
+            <div>
+              <p>Plazo</p>
+              <p>Tasa de retorno</p>
+            </div>
+            <div>
+              <p>Pago de intereses</p>
+              <p>Tasa de retorno</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>¿Cuando pagara intereses?</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero non rerum doloribus, consequuntur tenetur hic neque earum fugit ad quia, ab, cum aspernatur culpa praesentium in labore ex odit?</p>
+        </div>
+      </div>
+
+      <!-- Projects statisctis -->
+      <div>
+        <p>Faltan <span>$3,2500,000.00</span> para conseguir el monto mínimo</p>
+        <div>
+          DDDD
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
