@@ -1,4 +1,4 @@
-<% content_for :title, "Promotors" %>
+<% content_for :title, "Users" %>
 
 <div class="w-full">
   <% if notice.present? %>
@@ -6,16 +6,16 @@
   <% end %>
 
   <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Promotors</h1>
-    <%= link_to "New promotor", new_admin_promotor_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+    <h1 class="font-bold text-4xl">Users</h1>
+    <%= link_to "New user", new_admin_user_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
   </div>
 
   <div id="admin_promotors" class="flex flex-col w-full">
     <div class="overflow-x-auto sm:mx-0 5 lg:mx-0 5">
       <div class="py-2 inline-block min-w-full">
         <div class="overflow-y-auto">
-          <% if @admin_promotors.any? %>
-            <%= render "promotor", admin_promotors: @admin_promotors %>
+          <% if @admin_users.any? %>
+            <%= render "user", admin_users: @admin_users %>
           <% else %>
             <p class="text-center my-10">No promotors found.</p>
           <% end %>
@@ -23,5 +23,4 @@
       </div>
     </div>
   </div>
-
 </div>

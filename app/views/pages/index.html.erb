@@ -20,16 +20,91 @@
 </section>
 
 
-<!--Statictis section !-->
+<!--Info section !-->
+<section class="p-2 w-full">
+  <h3>Es importante que antes de invertir consultes la</h3>
+  <div class="flex items-center">
+    <%= image_tag("arrow.svg", class: "") %>
+    <%= link_to "Información básica para el inversor", class: "text-[2CA982]" %>
+  </div>
+</section>
 
+<!--How brikex work !-->
 
-<!--Quick steps !-->
+<section class="flex">
+  <div>
+    <h2>¿Como funciona Brikex?</h2>
+    <div>
+      <div>Imagen</div>
+      <h3>Elegimos proyectos de gran calidad</h3>
+      <p>Para que puedas invertir con total confianza, seleccionamos los mejores proyectos inmobiliarios.</p>
+    </div>
+  </div>
+
+  <div>
+    <h2>¿Como funciona Brikex?</h2>
+    <div>
+      <div>Imagen</div>
+      <h3>Elegimos proyectos de gran calidad</h3>
+      <p>Para que puedas invertir con total confianza, seleccionamos los mejores proyectos inmobiliarios.</p>
+    </div>
+  </div>
+
+  <div>
+    <h2>¿Como funciona Brikex?</h2>
+    <div>
+      <div>Imagen</div>
+      <h3>Elegimos proyectos de gran calidad</h3>
+      <p>Para que puedas invertir con total confianza, seleccionamos los mejores proyectos inmobiliarios.</p>
+    </div>
+  </div>
+
+</section>
 
 
 
 <!--Projects index users!-->
 
+<section>
+  <h2>Conoce nuestras oportunidades para invertir desde $500 pesos</h2>
+
+  <% @projects.each do |project|  %>
+    <div>
+
+      <h3><%= project.name %></h3>
+      <p><%= project.description %></p>
+
+      <p><%= project.status %></p>
+    </div>
+  <% end %>
+
+  <div>
+    <%= link_to "Ver oportunidades disponibles" %>
+  </div>
+</section>
+
 
 <!-- About section !-->
 
+<section>
+  <h2>Acerca de nosotros</h2>
+  <p>Conoce más sobre Brikex y nuestro equipo de trabajo.</p>
+  <%= image_tag("about_as_image.png") %>
+</section>
+
 <!-- Join us section !-->
+
+<section>
+  <h2>¿Tienes dudas?</h2>
+  <p>Estaremos encantados de atenderte</p>
+  <div>
+    <div>
+      <h3>Contáctanos</h3>
+      <p>Envíanos un correo a <a href="mailto:brikex@brikex.com">brikex@brikex.com</a></p>
+  </div>
+</section>
+
+<section>
+  <h2>Únete a nuestra plataforma y comienza a invertir</h2>
+  <%= link_to "Registrate", new_user_registration_path %>
+</section>

@@ -1,0 +1,57 @@
+<%= form_with(model: [:admin, admin_user], class: "contents") do |form| %>
+  <% if admin_user.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(admin_user.errors.count, "error") %> prohibited this admin_user from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% admin_user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:email].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:email].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :preferred_language %>
+    <%= form.text_field :preferred_language, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:preferred_language].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:preferred_language].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :country_code %>
+    <%= form.text_field :country_code, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:country_code].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:country_code].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:first_name].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:first_name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:last_name].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:last_name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :second_last_name %>
+    <%= form.text_field :second_last_name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:second_last_name].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:second_last_name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :phone_prefix %>
+    <%= form.text_field :phone_prefix, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:phone_prefix].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:phone_prefix].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": admin_user.errors[:phone_number].none?, "border-red-400 focus:outline-red-600": admin_user.errors[:phone_number].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

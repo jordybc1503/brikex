@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  
+  get 'promotors/index'
+
+
+
   devise_for :admins
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,15 +18,22 @@ Rails.application.routes.draw do
       resources :project_types
       resources :promotors
       resources :pages
+      resources :projects
+      resources :users
     end
   end
 
+
+
+
   # open routes
   resources :projects, only: [:index, :show]
+  resources :promotors, only: [:index, :show]
   # Defines the root path route ("/")
   root "pages#index"
   get "about_us", to: "pages#about_us"
   get "contact_us", to: "pages#contact_us"
 
   get "admin" => "admin#index"
+  get "pages" => "pages#index"
 end

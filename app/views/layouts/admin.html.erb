@@ -25,6 +25,11 @@
             </div>
             <ul class="flex flex-col text-gray-50">
               <li>
+                <%= link_to pages_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'arrow-left', class: "mr-2") %><span class="hidden md:inline-block">Ir a página publica</span>
+                <% end %>
+              </li>
+              <li>
                 <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                   <%= icon('fa-solid', 'gauge-high', class: "mr-2") %><span class="hidden md:inline-block">DashBoard</span>
                 <% end %>
@@ -35,7 +40,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to admin_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                <%= link_to admin_projects_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
                   <%= icon('fa-solid', 'building', class: "mr-2") %><span class="hidden md:inline-block">Projects</span>
                 <% end %>
               </li>
@@ -44,13 +49,23 @@
                   <%= icon('fa-solid', 'handshake', class: "mr-2") %><span class="hidden md:inline-block">Promotores</span>
                 <% end %>
               </li>
+              <li>
+                <%= link_to admin_users_path, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'user', class: "mr-2") %><span class="hidden md:inline-block">Usuarios</span>
+                <% end %>
+              </li>
+
+              <li>
+                <%= link_to destroy_admin_session_path, data: {"turbo_method": :delete, "turbo_confirm": "¿Estas seguro de cerrar sección?"}, class: "block px-4 py-2 hover:rounded hover:bg-gray-700" do %>
+                  <%= icon('fa-solid', 'right-from-bracket', class: "mr-2") %><span class="hidden md:inline-block">Log Out</span>
+                <% end %>
+              </li>
 
             </ul>
           </div>
         </nav>
 
-      </div>
-      <div>
+      </div class="w-full p-8">
         <%= yield %>
       </div>
     </main>
