@@ -96,7 +96,7 @@ end
 #
 puts "Creating projects..."
 
-20.times do |i|
+5.times do |i|
   Project.create!(
     name: Faker::Company.name,
     description: Faker::Company.catch_phrase,
