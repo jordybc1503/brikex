@@ -23,7 +23,7 @@ module.exports = {
         'gray-dark': '#1A1917',          // Very dark gray, almost black
       },
       backgroundImage: {
-        'banner-menu': "url('/assets/menu-banner.png')",
+        'banner-menu': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737258094/vgz7luj1f9whqnrrxd8f.png')",
       }
     },
   },
