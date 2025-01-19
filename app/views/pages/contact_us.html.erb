@@ -1,1 +1,36 @@
-<%= image_tag "contacto_ayuda_image.png" %>
+<section id="about-us" class="min-h-[250px] bg-banner-contact bg-cover bg-center bg-no-repeat md:min-h-[350px] lg:min-h-[450px]">
+  <div class="w-full flex flex-wrap justify-around px-8 md:px-20 py-8">
+    <h1 class="text-white text-4xl">Centro de ayuda</h1>
+
+    <p class="text-white text-2xl" >Oportunidades para invertir</p>
+
+    <form action="" class="flex items-center space-x-2">
+      <label for="language-select"><%= image_tag "icons/Globe 1.svg", alt: "Select Language", class: "w-6 h-6" %></label>
+      <select id="language-select" name="language" class="select text-white bg-transparent">
+        <option value="es" selected class="bg-transparent">Español</option>
+        <option value="en" class="bg-transparent">English</option>
+        <option value="fr" class="bg-transparent">Français</option>
+        <option value="de" class="bg-transparent">Deutsch</option>
+      </select>
+    </form>
+
+  </div>
+  <div class="w-full flex flex-col justify-around px-8 md:px-20 py-8">
+    <h3 class="text-2xl text-white">Hola, ¿Cómo te podemos ayudar?</h3>
+
+    <form action="/search" method="get" class="mt-4 flex flex-wrap ">
+      <input type="text" name="query" placeholder="Buscar..." class="p-2 border border-gray-300 rounded-md w-9/12 md:w-11/12">
+      <button type="submit" class="mt-2 p-2 bg-green-primary text-white rounded-md">Buscar</button>
+    </form>
+  </div>
+</section>
+
+
+<section>
+  <h2>Preguntas frecuentes</h2>
+  <div>
+    <div>
+      
+    </div>
+  </div>
+</section>

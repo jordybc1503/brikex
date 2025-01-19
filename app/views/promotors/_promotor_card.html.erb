@@ -1,0 +1,8 @@
+<div>
+  <% if promotor.image.presence? %>
+    <%= image_tag promotor.image, class: "max-w-[300px] md:max-w-[400px] h-auto object-cover md:w-1/3" %>
+  <% else %>
+    <%= image_tag "brikex_team.png", class: "max-w-[300px] md:max-w-[400px] h-auto object-cover md:w-1/3" %>
+  <% end %>
+  <p class="md:pl-8 md:w-2/3 my-4"><%= promotor.name %></p>
+</div>
