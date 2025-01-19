@@ -1,26 +1,52 @@
-<h2>Log in</h2>
+<section id="log-in" class="py-8 md:min-h-96">
+  <div class="border-2 border-green-primary rounded-3xl py-6 px-12 mx-auto
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+              w-80 flex flex-col justify-center items-center">
+    <h2 class="text-2xl font-bold text-center mb-4">Iniciar sesión</h2>
+    <p class="text-xs text-gray-500  mb-4">Accede a tu área privada</p>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "w-full mx-0") do |f| %>
+      <div class="field mb-2">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email",
+          placeholder: "Email*",
+          class: "border-b border-gray-300" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+      <div class="field mb-4">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+        <%= f.password_field :password, autocomplete: "current-password",
+          placeholder: "Contraseña*",
+          class: "border-b border-gray-300" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field mb-2">
+          <%= f.check_box :remember_me %>
+          <%= f.label "Recordar contraseña" %>
+        </div>
+      <% end %>
+
+      <div class="field mb-2 text-center">
+        <%= link_to new_password_path(resource_name) do %>
+          <p class="text-xs font-semibold" >He olvidado mi contraseña</p>
+        <% end %>
+      </div>
+
+
+
+      <%= f.submit "Iniciar sesion",
+          class: "bg-green-primary text-white rounded-xl py-2 px-6
+            hover:bg-green-muted" %>
+
+    <% end %>
+    <div class="field  w-full">
+      <hr class="border-b border-gray-300 my-4 w-full">
     </div>
-  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <p class="text-gray-400 mb-3">¿No tienes una cuenta?</p>
+    <%= link_to "Registrarse", new_registration_path(resource_name),
+        class: "text-green-primary border border-green-primary rounded-xl py-2 px-6"
+    %>
+
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+</section>
