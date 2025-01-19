@@ -17,68 +17,13 @@
   <div class="bg-[#22A881] text-center">
     <h3 class="text-white text-lg py-2 m-0"><%= project.name %></h3>
   </div>
-  <div class="px-6 grid grid-cols-2 gap-4 h-[120px] pt-4">
-    <!-- Left side -->
-    <div class="grid gap-y-4">
-      <div>
-        <div class="flex">
-          <%= image_tag "icons/Arrow Up Left Contained.svg", class: "h-6 w-6" %>
-          <p class="text-sm">10% anual</p>
-        </div>
-        <p class="text-gray-400 text-xs">Tasa de retorno</p>
-      </div>
-
-      <div>
-        <div class="flex">
-          <%= image_tag "icons/calendar.svg", class: "h-6 w-6" %>
-          <p class="text-sm">5 años</p>
-        </div>
-        <p class="text-gray-400 text-xs">Plazo</p>
-      </div>
-
-    </div>
-    <!-- Right side -->
-    <div>
-      <div>
-        <div class="flex">
-          <%= image_tag "icons/dolar-icon.svg", class: "h-6 w-6" %>
-          <p class="text-sm">5,000</p>
-        </div>
-        <p class="text-gray-400 text-xs">Inversión mín</p>
-      </div>
-    </div>
-
+  <div class="px-6 pt-4">
+    <%= render "projects/project_stat_inf", project: project %>
   </div>
 
+
   <div class="px-6 mt-5">
-    <div class="grid grid-cols-3 ">
-
-      <div>
-        <div class="flex">
-          <p class="text-sm">$ 755,000</p>
-        </div>
-        <p class="text-gray-400 text-xs">Minimo</p>
-      </div>
-
-      <div>
-        <div class="flex">
-          <p class="text-sm">$ 105,000</p>
-        </div>
-        <p class="text-gray-400 text-xs">Recaudado</p>
-      </div>
-
-      <div>
-        <div class="flex">
-          <p class="text-sm">$4,000,000</p>
-        </div>
-        <p class="text-gray-400 text-xs">Objetivo</p>
-      </div>
-
-    </div>
-
-    <div class="w-full mt-2 bg-gray-200 rounded-full h-2.5">
-      <div class="bg-[#22A881] h-2.5 rounded-full" style="width: 45%"></div>
-    </div>
+    <%= render "projects/project_bar", project: project %>
 
   </div>
 

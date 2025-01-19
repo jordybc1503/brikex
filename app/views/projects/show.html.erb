@@ -1,82 +1,140 @@
 <section id=<%= "project #{@project.id}"%>>
-  <div>
+  <div class="px-4 md:px-0 md:w-[95%] lg:w-[80%] mx-auto">
     <div>
-      <%= link_to "Oportunidades", projects_path %> / <%= @project.name %>
+      <%= link_to "Oportunidades", projects_path, class: "text-green-primary hover:text-green-muted " %> / <%= @project.name %>
     </div>
-    <div class="grid grid-cols-2 gap-4">
-      <div>
-        <h1><%= @project.name %></h1>
-        <% if @project.images.any? %>
-          <div class="relative" data-controller="image-slider">
-            <% @project.images.each_with_index do |image, index| %>
-              <%= image_tag image, class: "#{ index > 0 ? 'hidden' : ''  }" %>
-            <% end %>
-          </div>
-          <!-- Button previos -->
-          <button >
-            Anterior
-          </button>
-          <!-- Button next -->
-          <button>
-            Siguiente
-          </button>
+    <div class="grid md:grid-cols-2 gap-4 ">
+      <div >
+        <div >
+          <h1 class="bg-green-primary text-white rounded-t-md"><%= @project.name %></h1>
+            <% if @project.images.any? %>
+              <div class="relative" data-controller="image-slider">
+                <% @project.images.each_with_index do |image, index| %>
+                  <%= image_tag image, class: "#{ index > 0 ? 'hidden' : ''  }" %>
+                <% end %>
+              </div>
+              <!-- Button previos -->
+              <button >
+                Anterior
+              </button>
+              <!-- Button next -->
+              <button>
+                Siguiente
+              </button>
 
-        <% else %>
-          <%= image_tag "project_sample.png", class: "w-80" %>
-        <% end %>
+            <% else %>
+              <%= image_tag "project_sample.png", class: "w-80" %>
+            <% end %>
+            <div class="bg-gray-light">
+              <h4>Nuevo / Comercial</h4>
+            </div>
+        </div>
 
         <h2 class="text-lg font-bold"><%= @project.name %></h2>
-        <div>
+        <div class="flex">
           <%= image_tag "icons/Position.svg" %>
-          <p><%= @project.location %></p>
+          <p><%= @project.location.split(",").first %></p>
         </div>
+
+
         <p><%= @project.description %></p>
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid md:grid-cols-2 gap-4">
           <!-- Column 1 -->
-          <div>
-            <div>
-              <p>Instrumento</p>
-              <p>Tasa de retorno</p>
+          <div   class="md:border-r-4 md:pr-4 ">
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Document Normal.svg" %>
+                <p class="text-gray-400">Instrumento</p>
+              </div>
+              <p class="text-gray-400 font-semibold">Intrumento</p>
             </div>
-            <div>
-              <p>Plazo</p>
-              <p>Tasa de retorno</p>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/calendar.svg" %>
+                <p class="text-gray-400">Plazo</p>
+              </div>
+              <p class="text-gray-400 font-semibold">3 años</p>
             </div>
-            <div>
-              <p>Pago de intereses</p>
-              <p>Tasa de retorno</p>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Moneys.svg" %>
+                <p class="text-gray-400">Pago de intereses</p>
+              </div>
+              <p class="text-gray-400 font-semibold">Pago de intereses</p>
             </div>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Graph Bar Increase.svg" %>
+                <p class="text-gray-400">Taza anual fija</p>
+              </div>
+              <p class="text-gray-400 font-semibold">Taza anual fija</p>
+            </div>
+
           </div>
 
           <!-- Column 2 -->
-          <div>
-            <div>
-              <p>Instrumento</p>
-              <p>Tasa de retorno</p>
+          <div class="md:pl-4">
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/dolar-icon.svg" %>
+                <p class="text-gray-400">Minimo para invertir</p>
+              </div>
+              <p class="text-gray-400 font-semibold">$ 5,000</p>
             </div>
-            <div>
-              <p>Plazo</p>
-              <p>Tasa de retorno</p>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Logo-brikex-only.svg" %>
+                <p class="text-gray-400">Comisión Brikex</p>
+              </div>
+              <p class="text-gray-400 font-semibold">3%</p>
             </div>
-            <div>
-              <p>Pago de intereses</p>
-              <p>Tasa de retorno</p>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Medal Star.svg" %>
+                <p class="text-gray-400">Garantia</p>
+              </div>
+              <p class="text-gray-400 font-semibold">Intrumento</p>
             </div>
+
+            <div class="flex justify-between">
+              <div class="flex">
+                <%= image_tag "icons/Line Chart Down 01.svg" %>
+                <p class="text-gray-400">TIR anual estimada</p>
+              </div>
+              <p class="text-gray-400 font-semibold">Intrumento</p>
+            </div>
+
           </div>
         </div>
-        <div>
+        <div class="bg-[#EEEEEE] opacity-100 rounded-xl p-4 ">
+            <%= image_tag "icons/Document Normal.svg" %>
           <h3>¿Cuando pagara intereses?</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero non rerum doloribus, consequuntur tenetur hic neque earum fugit ad quia, ab, cum aspernatur culpa praesentium in labore ex odit?</p>
         </div>
       </div>
 
       <!-- Projects statisctis -->
-      <div>
+      <div class="h-[300px] mx-auto
+         md:p-4
+          md:border-r-4 md:border-l-4 md:border-b-4 md:border-gray-200 md:rounded-xl md:p-4  md:max-w-[450px]">
         <p>Faltan <span>$3,2500,000.00</span> para conseguir el monto mínimo</p>
         <div>
-          DDDD
+          <%= render "project_bar", project: @project %>
+          <%= render "project_stat_inf", project:  @project %>
         </div>
       </div>
+    </div>
+
+    <div class="flex justify-center">
+      <%= link_to "CALCULA CÓMO CRECERÁ TU DINERO LADRILLO A LADRILLO", calculator_path,
+            class: "text-white text-center  bg-[#22A881] px-3 py-2 rounded-xl
+                    hover:bg-green-muted"
+       %>
     </div>
 
   </div>

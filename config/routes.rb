@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   root "pages#index"
   get "about_us", to: "pages#about_us"
   get "contact_us", to: "pages#contact_us"
+  get "calculator", to: "pages#calculator"
 
   get "admin" => "admin#index"
   get "pages" => "pages#index"
