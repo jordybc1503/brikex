@@ -24,6 +24,7 @@ module.exports = {
       },
       backgroundImage: {
         'banner-menu': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737258094/vgz7luj1f9whqnrrxd8f.png')",
+        'banner-about-as': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737259196/lznhw0xb9m76hhmz1r3y.png')"
       }
     },
   },
