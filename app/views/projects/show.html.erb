@@ -7,11 +7,22 @@
       <div>
         <h1><%= @project.name %></h1>
         <% if @project.images.any? %>
-          <% @project.images.each_with_index do |image, index| %>
-            <%= image_tag image, class: "#{ index > 0 ? 'hidden' : ''  }" %>
-          <% end %>
+          <div class="relative" data-controller="image-slider">
+            <% @project.images.each_with_index do |image, index| %>
+              <%= image_tag image, class: "#{ index > 0 ? 'hidden' : ''  }" %>
+            <% end %>
+          </div>
+          <!-- Button previos -->
+          <button >
+            Anterior
+          </button>
+          <!-- Button next -->
+          <button>
+            Siguiente
+          </button>
+
         <% else %>
-          <%= image_tag "project_sample", class: "w-80" %>
+          <%= image_tag "project_sample.png", class: "w-80" %>
         <% end %>
 
         <h2 class="text-lg font-bold"><%= @project.name %></h2>
