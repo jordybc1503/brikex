@@ -23,7 +23,7 @@ module.exports = {
         'gray-dark': '#1A1917',          // Very dark gray, almost black
       },
       backgroundImage: {
-        'banner-menu': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737258094/vgz7luj1f9whqnrrxd8f.png')",
+        'banner-menu': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737328503/baner-menu-brikex.jpg')",
         'banner-about-as': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737259196/lznhw0xb9m76hhmz1r3y.png')",
         'banner-contact': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737263960/vwhhbxiq1bt2dfrwf4tg.png')",
         'banner-promotor': "url('https://res.cloudinary.com/dkaa53krr/image/upload/v1737265402/mi2dzickipuazp5ddqde.png')"

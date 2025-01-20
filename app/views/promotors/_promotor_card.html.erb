@@ -1,8 +1,22 @@
-<div>
-  <% if promotor.image.presence? %>
-    <%= image_tag promotor.image, class: "max-w-[300px] md:max-w-[400px] h-auto object-cover md:w-1/3" %>
+<div class="border-2 border-green-primary w-[300px] relative ml-6 mb-4">
+  <% if promotor.projects.any? && promotor.projects.first.images.any? %>
+    <%= cl_image_tag  promotor.projects.first.images.first.key, class: "w-full h-[185px] object-cover" %>
   <% else %>
-    <%= image_tag "brikex_team.png", class: "max-w-[300px] md:max-w-[400px] h-auto object-cover md:w-1/3" %>
+    <%= image_tag "brikex_team.png", class: "w-full h-[185px] object-cover" %>
   <% end %>
-  <p class="md:pl-8 md:w-2/3 my-4"><%= promotor.name %></p>
+  <p class="bg-green-primary text-white text-center py-2
+            "><%= promotor.name %></p>
+
+  <!-- Logo -->
+  <div class="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2">
+    <% if promotor.image.presence? %>
+      <%= image_tag promotor.logo,
+          class: "w-[60px] h-[60px] object-cover
+                  md:w-[80px] md:h-[80px]" %>
+    <% else %>
+      <%= image_tag "logo-promotor.png",
+          class: "w-[60px] h-[60px] object-cover
+                  md:w-[80px] md:h-[80px]" %>
+    <% end %>
+  </div>
 </div>

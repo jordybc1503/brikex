@@ -1,11 +1,13 @@
 <!--Hero section !-->
 <section class="bg-banner-menu bg-cover bg-center  md:min-h-[350px] lg:min-h-[450px]">
   <div class="max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
-      <div class="mr-auto place-self-center">
-          <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">INVIERTE DESDE <span class="text-green-primary">$ 5000</span></h1>
-          <div class="flex">
+      <div class="mr-auto place-self-center flex flex-col justify-items-end items-end">
+          <h1 class="w-4/5 mb-4 text-4xl text-right font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">INVIERTE DESDE <br><span class="text-green-primary">$ 5000</span></h1>
+          <div class="flex my-4 md:my-8">
             <h2 class="text-white">BRIKEX</h2>
-            <div class="w-10 border-2 border-x-white"></div>
+            <div class="flex items-center px-2">
+              <hr class="w-10 border-2 border-x-white">
+            </div>
             <div class="g-x-1">
                <%= link_to "https://twitter.com/yourprofile", target: "_blank", rel: "noopener" do %>
                   <%= icon('fa-brands', 'twitter', class: "bg-white rounded-full p-0.5 hover:bg-gray-200 transition") %>
@@ -26,16 +28,15 @@
           </div>
 
           <%= link_to "Empieza a invertir", current_user.present? ? projects_path : new_user_registration_path,
-            class: "inline-flex
-                    items-center
-                    justify-center
-                    px-5 py-3
+            class: "inline-flex items-center justify-center
+                    px-4 py-2
+                    md:px-5 md:py-3
                     bg-green-primary
                     text-base
                     font-medium
                     text-center
                     text-white
-                    rounded-lg
+                    rounded-3xl
                     hover:bg-green-muted
                     focus:ring-4
                     focus:ring-gray-100"  %>
@@ -65,24 +66,24 @@
 
   <div class="flex  md:px-16 justify-around flex-wrap">
 
-    <div class="w-64 m-8">
+    <div class="w-64 m-4 md:m-8">
       <%= image_tag("icons/Receipt Search.svg") %>
         <h3 class="font-bold text-lg">Elegimos proyectos de gran calidad</h3>
-        <p class="mt-5">Para que puedas invertir con total confianza, seleccionamos los mejores proyectos inmobiliarios.</p>
+        <p class="mt-2 md:mt-5">Para que puedas invertir con total confianza, seleccionamos los mejores proyectos inmobiliarios.</p>
     </div>
 
-    <div class="w-64 m-8">
+    <div class="w-64 m-4 md:m-8">
       <%= image_tag("icons/People.svg") %>
         <h3 class="font-bold text-lg">Juntamos el capital de muchas personas</h3>
-        <p class="mt-5">Unimos a muchos inversores para financiar proyectos que de otra manera no serían posibles.</p>
+        <p class="mt-2 md:mt-5">Unimos a muchos inversores para financiar proyectos que de otra manera no serían posibles.</p>
 
     </div>
 
 
-    <div class="w-64 m-8">
+    <div class="w-64 m-4 md:m-8">
       <%= image_tag("icons/Money Recive.svg") %>
         <h3 class="font-bold text-lg">Se invierte el capital y se genera retornos</h3>
-        <p class="mt-5">Una vez que el capital está invertido, generamos retornos que se distribuyen entre los inversores.</p>
+        <p class="mt-2 md:mt-5">Una vez que el capital está invertido, generamos retornos que se distribuyen entre los inversores.</p>
     </div>
 
 
@@ -126,8 +127,11 @@
 
 <!-- About section !-->
 
-<section>
-  <h2 class="text-xl font-bold">Acerca de nosotros</h2>
+<section class="flex flex-col items-center mt-4 md:mt-8">
+  <%= link_to about_us_path do %>
+    <h2 class="text-xl md:text-2xl lg:text-3xl font-bold
+              hover:text-green-primary">Acerca de nosotros</h2>
+  <% end %>
   <p>Conoce más sobre Brikex y nuestro equipo de trabajo.</p>
   <%= image_tag("about_as_image.png") %>
 </section>
@@ -144,7 +148,9 @@
   </div>
 </section>
 
-<section>
-  <h2>Únete a nuestra plataforma y comienza a invertir</h2>
-  <%= link_to "Registrate", new_user_registration_path %>
+<section class="bg-green-muted text-center p-4">
+  <h2 class="mb-4 text-white font-semibold text-xl  mx-auto md:text-4xl lg:text-6xl">Únete a nuestra plataforma <br><span class="font-normal">y comienza a invertir</span></h2>
+  <%= link_to "Registrate", new_user_registration_path,
+    class: "text-white bg-green-primary rounded-3xl px-3 py-2
+            hover:bg-green-200"  %>
 </section>
