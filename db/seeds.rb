@@ -93,7 +93,7 @@ end
 
 
 # Create projects
-#
+
 puts "Creating projects..."
 
 5.times do |i|
@@ -111,6 +111,8 @@ puts "Creating projects..."
     project_type: ProjectType.all.sample
   )
 end
+
+
 
 
 User.all.each do |user|
